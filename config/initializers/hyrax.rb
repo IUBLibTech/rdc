@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Hyrax.config do |config|
+  # Injected via `rails g hyrax:work_resource DataSet`
+  config.register_curation_concern :data_set
   # Register roles that are expected by your implementation.
   # @see Hyrax::RoleRegistry for additional details.
   # @note there are magical roles as defined in Hyrax::RoleRegistry::MAGIC_ROLES
@@ -105,7 +107,7 @@ Hyrax.config do |config|
   # Should work creation require file upload, or can a work be created first
   # and a file added at a later time?
   # The default is true.
-  # config.work_requires_files = true
+  config.work_requires_files = false
 
   # How many rows of items should appear on the work show view?
   # The default is 10
@@ -125,8 +127,8 @@ Hyrax.config do |config|
   #   * iiif_image_size_default
   #
   # Default is false
-  config.iiif_image_server = true
-  # config.iiif_image_server = false
+  # config.iiif_image_server = true
+  config.iiif_image_server = false
 
   # Returns a URL that resolves to an image provided by a IIIF image server
   config.iiif_image_url_builder = lambda do |file_id, base_url, size, format|

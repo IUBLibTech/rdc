@@ -1,0 +1,139 @@
+# Simple yaml config-driven schema which is used to define model attributes,
+# index key names, and form properties.
+#
+# Attributes must have a type but all other configuration options are optional.
+# Please note: If using Valkyrie's Fedora Metadata Adapter, predicates for attributes
+# must be placed here.
+#
+# attributes:
+#   attribute_name:
+#     type: string
+#     multiple: false
+#     index_keys:
+#       - "attribute_name_sim"
+#     form:
+#       required: true
+#       primary: true
+#       multiple: false
+#
+# @see config/metadata/basic_metadata.yaml for an example configuration
+#
+# Generated via
+#  `rails generate hyrax:work_resource DataSet`
+
+attributes:
+  summary:
+    type: string
+    multiple: false
+    index_keys:
+      - 'summary_tesim'
+    form:
+      required: true
+      primary: true
+      multiple: false
+
+  description:
+    type: string
+    multiple: false
+    index_keys:
+      - 'description_tesim'
+    form:
+      required: false
+      primary: false
+      multiple: false
+
+  documentation:
+    type: string
+    multiple: true
+    index_keys:
+      - 'documentation_tesim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  access_summary:
+    type: string
+    multiple: false
+    index_keys:
+      - 'access_summary_tesim'
+    form:
+      required: false
+      primary: false
+      multiple: false
+
+  access_process:
+    type: string
+    multiple: true
+    index_keys:
+      - 'access_process_tesim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  subject:
+    type: string
+    multiple: true
+    index_keys:
+      - 'subject_tesim'
+      - 'subject_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  data_location:
+    type: string
+    multiple: true
+    index_keys:
+      - 'data_location_tesim'
+      - 'data_location_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  time_frame:
+    type: string
+    multiple: true
+    index_keys:
+      - 'time_frame_tesim'
+      - 'time_frame_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  file_format:
+    type: string
+    multiple: true
+    index_keys:
+      - 'file_format_tesim'
+      - 'file_format_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  hosting_unit:
+    type: string
+    multiple: true
+    index_keys:
+      - 'hosting_unit_tesim'
+      - 'hosting_unit_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true
+
+  public_contact:
+    type: string
+    multiple: true
+    index_keys:
+      - 'public_contact_tesim'
+      - 'public_contact_sim'
+    form:
+      required: false
+      primary: false
+      multiple: true

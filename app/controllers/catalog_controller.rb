@@ -60,7 +60,10 @@ class CatalogController < ApplicationController
     config.add_facet_field "language_sim", limit: 5
     config.add_facet_field "based_near_label_sim", limit: 5
     config.add_facet_field "publisher_sim", limit: 5
-    config.add_facet_field "file_format_sim", limit: 5
+    config.add_facet_field "file_format_sim", limit: 5, label: 'File Format'
+    config.add_facet_field "time_frame_sim", limit: 5, label: 'Timeframe'
+    config.add_facet_field "data_location_sim", limit: 5, label: 'Data Location'
+    config.add_facet_field "hosting_unit_sim", limit: 5, label: 'Hosting Unit'
     config.add_facet_field "member_of_collection_ids_ssim", limit: 5, label: 'Collections', helper_method: :collection_title_by_id
 
     # The generic_type and depositor are not displayed on the facet list
@@ -76,24 +79,28 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field "title_tesim", label: "Title", itemprop: 'name', if: false
-    config.add_index_field "description_tesim", itemprop: 'description', helper_method: :iconify_auto_link
+    config.add_index_field "summary_tesim", label: "Summary",  itemprop: 'summary', helper_method: :iconify_auto_link
     config.add_index_field "keyword_tesim", itemprop: 'keywords', link_to_facet: "keyword_sim"
-    config.add_index_field "subject_tesim", itemprop: 'about', link_to_facet: "subject_sim"
+    # config.add_index_field "subject_tesim", itemprop: 'about', link_to_facet: "subject_sim"
     config.add_index_field "creator_tesim", itemprop: 'creator', link_to_facet: "creator_sim"
     config.add_index_field "contributor_tesim", itemprop: 'contributor', link_to_facet: "contributor_sim"
     config.add_index_field "proxy_depositor_ssim", label: "Depositor", helper_method: :link_to_profile
-    config.add_index_field "depositor_tesim", label: "Owner", helper_method: :link_to_profile
+    # config.add_index_field "depositor_tesim", label: "Owner", helper_method: :link_to_profile
     config.add_index_field "publisher_tesim", itemprop: 'publisher', link_to_facet: "publisher_sim"
     config.add_index_field "based_near_label_tesim", itemprop: 'contentLocation', link_to_facet: "based_near_label_sim"
     config.add_index_field "language_tesim", itemprop: 'inLanguage', link_to_facet: "language_sim"
-    config.add_index_field "date_uploaded_dtsi", itemprop: 'datePublished', helper_method: :human_readable_date
-    config.add_index_field "date_modified_dtsi", itemprop: 'dateModified', helper_method: :human_readable_date
-    config.add_index_field "date_created_tesim", itemprop: 'dateCreated'
+    # config.add_index_field "date_uploaded_dtsi", itemprop: 'datePublished', helper_method: :human_readable_date
+    # config.add_index_field "date_modified_dtsi", itemprop: 'dateModified', helper_method: :human_readable_date
+    # config.add_index_field "date_created_tesim", itemprop: 'dateCreated'
     config.add_index_field "rights_statement_tesim", helper_method: :rights_statement_links
     config.add_index_field "license_tesim", helper_method: :license_links
     config.add_index_field "resource_type_tesim", label: "Resource Type", link_to_facet: "resource_type_sim"
-    config.add_index_field "file_format_tesim", link_to_facet: "file_format_sim"
+    # config.add_index_field "file_format_tesim", link_to_facet: "file_format_sim"
     config.add_index_field "identifier_tesim", helper_method: :index_field_link, field_name: 'identifier'
+    # config.add_index_field "data_location_tesim", link_to_facet: "data_location_sim"
+    # config.add_index_field "time_frame_tesim", link_to_facet: "time_frame_sim"
+    # config.add_index_field "hosting_unit_tesim", link_to_facet: "hosting_unit_sim"
+    # config.add_index_field "public_contact_tesim", link_to_facet: "public_contact_sim"
     config.add_index_field Hydra.config.permissions.embargo.release_date, label: "Embargo release date", helper_method: :human_readable_date
     config.add_index_field Hydra.config.permissions.lease.expiration_date, label: "Lease expiration date", helper_method: :human_readable_date
 
@@ -102,6 +109,14 @@ class CatalogController < ApplicationController
     config.add_show_field "title_tesim"
     config.add_show_field "description_tesim"
     config.add_show_field "keyword_tesim"
+    config.add_show_field "documentation_tesim"
+    config.add_show_field "access_summary_tesim"
+    config.add_show_field "access_process_tesim"
+    config.add_show_field "data_location_tesim"
+    config.add_show_field "time_frame_tesim"
+    config.add_show_field "file_format_tesim"
+    config.add_show_field "hosting_unit_tesim"
+    config.add_show_field "public_contact_tesim"
     config.add_show_field "subject_tesim"
     config.add_show_field "creator_tesim"
     config.add_show_field "contributor_tesim"
@@ -290,8 +305,10 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     # label is key, solr field is value
     config.add_sort_field "score desc, #{uploaded_field} desc", label: "relevance"
-    config.add_sort_field "#{uploaded_field} desc", label: "date uploaded \u25BC"
-    config.add_sort_field "#{uploaded_field} asc", label: "date uploaded \u25B2"
+    config.add_sort_field "title_sim asc", label: "Title \u25BC"
+    config.add_sort_field "title_sim desc", label: "Title \u25B2"
+    # config.add_sort_field "#{uploaded_field} desc", label: "date uploaded \u25BC"
+    # config.add_sort_field "#{uploaded_field} asc", label: "date uploaded \u25B2"
     config.add_sort_field "#{modified_field} desc", label: "date modified \u25BC"
     config.add_sort_field "#{modified_field} asc", label: "date modified \u25B2"
 
