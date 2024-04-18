@@ -157,7 +157,7 @@ Hyrax.config do |config|
   # config.iiif_metadata_fields = Hyrax::Forms::WorkForm.required_fields
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
-  # config.display_share_button_when_not_logged_in = true
+  config.display_share_button_when_not_logged_in = false
 
   # This user is logged as the acting user for jobs and other processes that
   # run without being attributed to a specific user (e.g. creation of the
