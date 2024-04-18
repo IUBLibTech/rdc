@@ -11,6 +11,7 @@ without containerization. Good for development as it allows easier debugging and
 1. Install [Docker](https://www.docker.com/) and [Lando](https://lando.dev/)
 1. `lando start`
 1. `bundle install`
+1. `yarn install`
 1. `rails db:setup`
 1. `rails s`
 1. [https://localhost:3000]()
