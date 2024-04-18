@@ -43,7 +43,6 @@ end
 group :development, :test do
   gem 'debug'
   gem 'dotenv-rails', '~> 2.8'
-  gem 'localhost'
   gem 'rspec-rails'
 end
 
@@ -73,3 +72,4 @@ gem 'hydra-role-management'
 gem 'openseadragon', '>= 0.2.0'
 gem 'riiif', '~> 2.1'
 
+gem 'localhost'
