@@ -5,7 +5,7 @@ services:
     app_mount: false
     type: solr:8
     portforward: 8988
-    core: hyrax-dev
+    core: rdc
     config:
       dir: solr/conf
   database:

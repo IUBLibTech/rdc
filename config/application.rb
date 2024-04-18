@@ -12,6 +12,7 @@ module DataCatalog
     config.load_defaults 6.1
     config.active_job.queue_adapter = ENV.fetch('HYRAX_ACTIVE_JOB_QUEUE') { 'async' }.to_sym
 
+    config.force_ssl = true
 
     # Configuration for the application, engines, and railties goes here.
     #

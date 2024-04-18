@@ -1,0 +1,51 @@
+# Requires Docker Compose v2
+name: rdc
+services:
+  app:
+    build:
+      context: .
+    image: ghcr.io/iublibtech/rdc/rdc:latest
+    env_file:
+      - .docker.env
+    volumes:
+      - storage:/app/samvera/hyrax-webapp/storage
+    depends_on:
+      - postgres
+      - redis
+      - solr
+    ports:
+      - 3000:3000
+    command: bundle exec rails s
+
+  postgres:
+    image: postgres:15
+    env_file:
+      - .docker.env
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  redis:
+    image: bitnami/redis:6.2
+    env_file:
+      - .docker.env
+    volumes:
+      - redis:/bitnami/redis/data
+
+  solr:
+    image: solr:8.11
+    env_file:
+      - .docker.env
+    command: solr-precreate rdc /opt/solr/server/configsets/hyraxconf
+    volumes:
+      - solr_home:/var/solr/data
+      - ./solr/conf:/opt/solr/server/configsets/hyraxconf:ro
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 524288
+
+volumes:
+  db:
+  redis:
+  solr_home:
+  storage:
