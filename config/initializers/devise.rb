@@ -272,15 +272,15 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  # if ENV.fetch('CAS_HOST', nil).present? # Not set during image build
-  #   config.omniauth :cas,
-  #                   :host => ENV.fetch('CAS_HOST'),
-  #                   :login_url => ENV.fetch('CAS_LOGIN_URL'),
-  #                   :service_validate_url => ENV.fetch('CAS_VALIDATE_URL'),
-  #                   :logout_url => ENV.fetch('CAS_LOGOUT_URL'),
-  #                   :callback_url => ENV.fetch('CAS_CALLBACK_URL'),
-  #                   :ssl => true
-  # end
+  if ENV.fetch('CAS_HOST', nil).present? # Not set during image build
+    config.omniauth :cas,
+                    :host => ENV.fetch('CAS_HOST'),
+                    :login_url => ENV.fetch('CAS_LOGIN_URL'),
+                    :service_validate_url => ENV.fetch('CAS_VALIDATE_URL'),
+                    :logout_url => ENV.fetch('CAS_LOGOUT_URL'),
+                    :callback_url => ENV.fetch('CAS_CALLBACK_URL'),
+                    :ssl => true
+  end
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
