@@ -73,3 +73,4 @@ gem 'openseadragon', '>= 0.2.0'
 gem 'riiif', '~> 2.1'
 
 gem 'localhost'
+gem 'redcarpet'
