@@ -6,6 +6,8 @@ class DataSetIndexer < Hyrax::Indexers::PcdmObjectIndexer(DataSet)
   include Hyrax::Indexer(:basic_metadata)
   include Hyrax::Indexer(:data_set)
 
+  self.thumbnail_path_service = DataCatalog::ThumbnailPathService
+
   # Uncomment this block if you want to add custom indexing behavior:
   #  def to_solr
   #    super.tap do |index_document|
