@@ -1,0 +1,19 @@
+/*!
+ * modifications to blend rivet styling with hyrax
+ */
+
+/* footer width */
+.rvt-container-lg {
+  max-width: 100%;
+  }
+
+/* application name width in header */
+.rvt-header-global__logo-slot {
+  width: 100%;
+  flex-shrink: 1;
+}
+
+/* meet AA contrast requirements */
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+}
