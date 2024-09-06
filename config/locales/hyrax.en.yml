@@ -47,6 +47,8 @@ en:
           title_tesim: Title
   hyrax:
     account_name: My Institution Account Id
+    contact_form:
+      notice: Please use the contact form to submit inquiries about this system; to report a problem you are experiencing with the system; to request assistance using the system; or to provide general feedback. See the Help page for additional information about this system.
     directory:
       suffix: "@example.org"
     footer:
