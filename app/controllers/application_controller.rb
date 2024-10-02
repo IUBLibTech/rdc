@@ -9,5 +9,7 @@ class ApplicationController < ActionController::Base
   include Hyrax::ThemedLayoutController
   with_themed_layout '1_column'
 
-
+  def login
+    redirect_post('/users/auth/cas', options: {authenticity_token: :auto})
+  end
 end
