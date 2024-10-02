@@ -10,18 +10,12 @@ module HyraxHelper
     DataCatalog::MarkdownService.call(text).html_safe
   end
 
-  # import hyrax method
+  # override hyrax method
   # Which translations are available for the user to select
   # @return [Hash{String => String}] locale abbreviations as keys and flags as values
   def available_translations
     {
-      'de' => 'Deutsch',
-      'en' => 'English',
-      'es' => 'Español',
-      'fr' => 'Français',
-      'it' => 'Italiano',
-      'pt-BR' => 'Português do Brasil',
-      'zh' => '中文'
+      'en' => 'English'
     }
   end
 end
