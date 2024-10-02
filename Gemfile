@@ -74,3 +74,4 @@ gem 'riiif', '~> 2.1'
 
 gem 'localhost'
 gem 'redcarpet'
+gem 'repost'
