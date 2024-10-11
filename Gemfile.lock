@@ -771,6 +771,7 @@ GEM
     regexp_parser (2.9.0)
     reline (0.5.2)
       io-console (~> 0.5)
+    repost (0.4.2)
     representable (3.2.0)
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
@@ -987,6 +988,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.7)
   redcarpet
+  repost
   riiif (~> 2.1)
   rsolr (>= 1.0, < 3)
   rspec-rails

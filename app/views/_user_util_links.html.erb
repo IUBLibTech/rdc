@@ -18,10 +18,6 @@
       </div>
     </li>
   <% else %>
-    <li class="nav-item">
-      <%= link_to main_app.user_cas_omniauth_authorize_path, method: :post, class: 'nav-link' do %>
-        <span class="fa fa-sign-in" aria-hidden="true"></span> <%= t("hyrax.toolbar.profile.login") %>
-      <% end %>
-    </li>
+    <%# drop login link %>
   <% end %>
 </ul>
