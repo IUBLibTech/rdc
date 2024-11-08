@@ -15,9 +15,9 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
-    config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
-    config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
-    config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
+    # config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
+    # config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
+    # config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials.insert(1, :openseadragon)
     config.search_builder_class = Hyrax::CatalogSearchBuilder
@@ -30,7 +30,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       qt: "search",
       rows: 10,
-      qf: "title_tesim description_tesim creator_tesim keyword_tesim"
+      qf: "title_tesim abstract_tesim description_tesim creator_tesim subject_tesim geographic_location_tesim domain_subject_tesim"
     }
 
     # solr field configuration for document/show views
@@ -51,20 +51,24 @@ class CatalogController < ApplicationController
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field "human_readable_type_sim", label: "Type", limit: 5
-    config.add_facet_field "resource_type_sim", label: "Resource Type", limit: 5
-    config.add_facet_field "creator_sim", limit: 5
-    config.add_facet_field "contributor_sim", label: "Contributor", limit: 5
-    config.add_facet_field "keyword_sim", limit: 5
-    config.add_facet_field "subject_sim", limit: 5
-    config.add_facet_field "language_sim", limit: 5
-    config.add_facet_field "based_near_label_sim", limit: 5
-    config.add_facet_field "publisher_sim", limit: 5
-    config.add_facet_field "file_format_sim", limit: 5, label: 'File Format'
-    config.add_facet_field "time_frame_sim", limit: 5, label: 'Timeframe'
-    config.add_facet_field "data_location_sim", limit: 5, label: 'Data Location'
-    config.add_facet_field "hosting_unit_sim", limit: 5, label: 'Hosting Unit'
-    config.add_facet_field "member_of_collection_ids_ssim", limit: 5, label: 'Collections', helper_method: :collection_title_by_id
+    config.add_facet_field "domain_subject_sim", limit: 10, label: 'Domain Subject'
+    config.add_facet_field "campus_sim", limit: 10, label: 'Campus'
+    config.add_facet_field "holding_location_sim", limit: 10, label: 'Hosting Unit'
+    # config.add_facet_field "rights_statement_sim", limit: 10, label: 'Access Restrictions'
+    # config.add_facet_field "human_readable_type_sim", label: "Type", limit: 5
+    # config.add_facet_field "resource_type_sim", label: "Resource Type", limit: 5
+    # config.add_facet_field "creator_sim", limit: 5
+    # config.add_facet_field "contributor_sim", label: "Contributor", limit: 5
+    # config.add_facet_field "keyword_sim", limit: 5
+    # config.add_facet_field "subject_sim", limit: 5
+    # config.add_facet_field "language_sim", limit: 5
+    # config.add_facet_field "based_near_label_sim", limit: 5
+    # config.add_facet_field "publisher_sim", limit: 5
+    # config.add_facet_field "file_format_sim", limit: 5, label: 'File Format'
+    # config.add_facet_field "time_frame_sim", limit: 5, label: 'Timeframe'
+    # config.add_facet_field "data_location_sim", limit: 5, label: 'Data Location'
+    # config.add_facet_field "hosting_unit_sim", limit: 5, label: 'Hosting Unit'
+    # config.add_facet_field "member_of_collection_ids_ssim", limit: 5, label: 'Collections', helper_method: :collection_title_by_id
 
     # The generic_type and depositor are not displayed on the facet list
     # They are used to give a label to the filters that comes from the user profile
@@ -79,24 +83,26 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field "title_tesim", label: "Title", itemprop: 'name', if: false
-    config.add_index_field "summary_tesim", label: "Summary",  itemprop: 'summary', helper_method: :render_markdown
-    config.add_index_field "keyword_tesim", itemprop: 'keywords', link_to_facet: "keyword_sim"
+    config.add_index_field "abstract_tesim", label: "Summary",  itemprop: 'summary', helper_method: :render_markdown
+    config.add_index_field "domain_subject_tesim", label: 'Domain Subject', itemprop: 'keywords', link_to_facet: "domain_subject_sim"
+    config.add_index_field "campus_tesim", label: 'Campus', itemprop: 'campus', link_to_facet: "campus_sim"
+    config.add_index_field "holding_location_tesim", label: 'Hosting Unit', link_to_facet: "holding_location_sim"
+    config.add_index_field "rights_statement_tesim", label: 'Access Restrictions', link_to_facet: 'rights_statement_sim', helper_method: :rights_statement_links
     # config.add_index_field "subject_tesim", itemprop: 'about', link_to_facet: "subject_sim"
-    config.add_index_field "creator_tesim", itemprop: 'creator', link_to_facet: "creator_sim"
-    config.add_index_field "contributor_tesim", itemprop: 'contributor', link_to_facet: "contributor_sim"
-    config.add_index_field "proxy_depositor_ssim", label: "Depositor", helper_method: :link_to_profile
+    # config.add_index_field "creator_tesim", itemprop: 'creator', link_to_facet: "creator_sim"
+    # config.add_index_field "contributor_tesim", itemprop: 'contributor', link_to_facet: "contributor_sim"
+    # config.add_index_field "proxy_depositor_ssim", label: "Depositor", helper_method: :link_to_profile
     # config.add_index_field "depositor_tesim", label: "Owner", helper_method: :link_to_profile
-    config.add_index_field "publisher_tesim", itemprop: 'publisher', link_to_facet: "publisher_sim"
-    config.add_index_field "based_near_label_tesim", itemprop: 'contentLocation', link_to_facet: "based_near_label_sim"
-    config.add_index_field "language_tesim", itemprop: 'inLanguage', link_to_facet: "language_sim"
+    # config.add_index_field "publisher_tesim", itemprop: 'publisher', link_to_facet: "publisher_sim"
+    # config.add_index_field "based_near_label_tesim", itemprop: 'contentLocation', link_to_facet: "based_near_label_sim"
+    # config.add_index_field "language_tesim", itemprop: 'inLanguage', link_to_facet: "language_sim"
     # config.add_index_field "date_uploaded_dtsi", itemprop: 'datePublished', helper_method: :human_readable_date
     # config.add_index_field "date_modified_dtsi", itemprop: 'dateModified', helper_method: :human_readable_date
     # config.add_index_field "date_created_tesim", itemprop: 'dateCreated'
-    config.add_index_field "rights_statement_tesim", helper_method: :rights_statement_links
-    config.add_index_field "license_tesim", helper_method: :license_links
-    config.add_index_field "resource_type_tesim", label: "Resource Type", link_to_facet: "resource_type_sim"
+    # config.add_index_field "license_tesim", helper_method: :license_links
+    # config.add_index_field "resource_type_tesim", label: "Resource Type", link_to_facet: "resource_type_sim"
     # config.add_index_field "file_format_tesim", link_to_facet: "file_format_sim"
-    config.add_index_field "identifier_tesim", helper_method: :index_field_link, field_name: 'identifier'
+    # config.add_index_field "identifier_tesim", helper_method: :index_field_link, field_name: 'identifier'
     # config.add_index_field "data_location_tesim", link_to_facet: "data_location_sim"
     # config.add_index_field "time_frame_tesim", link_to_facet: "time_frame_sim"
     # config.add_index_field "hosting_unit_tesim", link_to_facet: "hosting_unit_sim"
