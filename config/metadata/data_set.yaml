@@ -22,57 +22,60 @@
 #  `rails generate hyrax:work_resource DataSet`
 
 attributes:
-  summary:
+  abstract:
+    display_label: Summary
+    predicate: http://purl.org/dc/terms/abstract
     type: string
-    multiple: false
+    multiple: true
     index_keys:
-      - 'summary_tesim'
+      - 'abstract_tesim'
     form:
       required: true
       primary: true
-      multiple: false
-
-  description:
-    type: string
-    multiple: false
-    index_keys:
-      - 'description_tesim'
-    form:
-      required: false
-      primary: false
-      multiple: false
-
-  documentation:
-    type: string
-    multiple: true
-    index_keys:
-      - 'documentation_tesim'
-    form:
-      required: false
-      primary: false
       multiple: true
 
-  access_summary:
-    type: string
-    multiple: false
-    index_keys:
-      - 'access_summary_tesim'
-    form:
-      required: false
-      primary: false
-      multiple: false
-
-  access_process:
+  related_url:
+    display_label: Documentation
+    predicate: http://www.w3.org/2000/01/rdf-schema#seeAlso
     type: string
     multiple: true
     index_keys:
-      - 'access_process_tesim'
+      - 'related_url_tesim'
+      - 'related_url_sim'
     form:
       required: false
-      primary: false
+      primary: true
+      multiple: true
+
+  rights_notes:
+    display_label: Access Instructions
+    predicate: http://purl.org/dc/elements/1.1/rights
+    type: string
+    multiple: true
+    index_keys:
+      - 'rights_notes_tesim'
+      - 'rights_notes_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  time_period:
+    display_label: Timeframe
+    predicate: http://purl.org/dc/terms/temporal
+    type: string
+    multiple: true
+    index_keys:
+      - 'time_period_tesim'
+      - 'time_period_sim'
+    form:
+      required: false
+      primary: true
       multiple: true
 
   subject:
+    display_label: Keyword Subject
+    predicate: http://purl.org/dc/terms/subject
     type: string
     multiple: true
     index_keys:
@@ -80,60 +83,148 @@ attributes:
       - 'subject_sim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
 
-  data_location:
+  geographic_location:
+    display_label: Spatial Subject
+    predicate: http://purl.org/dc/terms/coverage
     type: string
     multiple: true
     index_keys:
-      - 'data_location_tesim'
-      - 'data_location_sim'
+      - 'geographic_location_tesim'
+      - 'geographic_location_sim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
 
-  time_frame:
+  domain_subject:
+    display_label: Domain Subject
+    predicate: http://purl.org/dc/elements/1.1/subject
     type: string
     multiple: true
     index_keys:
-      - 'time_frame_tesim'
-      - 'time_frame_sim'
+      - 'domain_subject_tesim'
+      - 'domain_subject_sim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
 
-  file_format:
+  creator:
+    display_label: Creator
+    predicate: http://purl.org/dc/terms/creator
     type: string
     multiple: true
     index_keys:
-      - 'file_format_tesim'
-      - 'file_format_sim'
+      - 'creator_tesim'
+      - 'creator_sim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
 
-  hosting_unit:
+  description:
+    display_label: Description
+    predicate: http://purl.org/dc/terms/description
     type: string
     multiple: true
     index_keys:
-      - 'hosting_unit_tesim'
-      - 'hosting_unit_sim'
+      - 'description_tesim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
 
-  public_contact:
+  location_physical:
+    display_label: Data Location
+    predicate: https://www.loc.gov/standards/mods/rdf/v1/#locationPhysical
     type: string
     multiple: true
     index_keys:
-      - 'public_contact_tesim'
-      - 'public_contact_sim'
+      - 'location_physical_tesim'
+      - 'location_physical_sim'
     form:
       required: false
-      primary: false
+      primary: true
       multiple: true
+
+  digital_specifications:
+    display_label: File Format(s)
+    predicate: http://purl.org/dc/elements/1.1/format
+    type: string
+    multiple: true
+    index_keys:
+      - 'digital_specifications_tesim'
+      - 'digital_specifications_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  expert:
+    display_label: 'Public Contact'
+    predicate: http://id.loc.gov/vocabulary/relators/exp
+    type: string
+    multiple: true
+    index_keys:
+      - 'expert_tesim'
+      - 'expert_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  holding_location:
+    display_label: Hosting Unit
+    predicate: http://id.loc.gov/ontologies/bibframe/heldBy
+    type: string
+    multiple: true
+    index_keys:
+      - 'holding_location_tesim'
+      - 'holding_location_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  campus:
+    display_label: Campus
+    predicate: http://id.loc.gov/vocabulary/relators/uvp
+    type: string
+    multiple: true
+    index_keys:
+      - 'campus_tesim'
+      - 'campus_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  rights_statement:
+    display_label: Access Restrictions
+    predicate: http://www.europeana.eu/schemas/edm/rights
+    type: string
+    multiple: true
+    index_keys:
+      - 'rights_statement_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  bibliographic_citation:
+    display_label: Bibliographic Citation
+    predicate: http://purl.org/dc/terms/bibliographicCitation
+    type: string
+    multiple: true
+    index_keys:
+      - 'bibliographic_citation_tesim'
+      - 'bibliographic_citation_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
+  #  Bulkrax Fields TODO

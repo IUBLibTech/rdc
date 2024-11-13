@@ -28,14 +28,21 @@ class SolrDocument
 
   use_extension( Hydra::ContentNegotiation )
 
-  attribute :summary, Solr::String, "summary_tesim"
-  attribute :documentation, Solr::String, "documentation_tesim"
-  attribute :access_summary, Solr::String, "access_summary_tesim"
-  attribute :access_process, Solr::String, "access_process_tesim"
-  attribute :data_location, Solr::Array, "data_location_tesim"
-  attribute :time_frame, Solr::Array, "time_frame_tesim"
-  attribute :file_format, Solr::Array, "file_format_tesim"
-  attribute :hosting_unit, Solr::Array, "hosting_unit_tesim"
-  attribute :public_contact, Solr::Array, "public_contact_tesim"
+  attribute :abstract, Solr::Array, "abstract_tesim"
+  attribute :description, Solr::Array, "description_tesim"
+  attribute :related_url, Solr::Array, "related_url_tesim"
+  attribute :rights_notes, Solr::Array, "rights_notes_tesim"
+  attribute :time_period, Solr::Array, "time_period_tesim"
+  attribute :subject, Solr::Array, "subject_tesim"
+  attribute :geographic_location, Solr::Array, "geographic_location_tesim"
+  attribute :domain_subject, Solr::Array, "domain_subject_tesim"
+  attribute :creator, Solr::Array, "creator_tesim"
+  attribute :location_physical, Solr::Array, "location_physical_tesim"
+  attribute :digital_specifications, Solr::Array, "digital_specifications_tesim"
+  attribute :expert, Solr::Array, "expert_tesim"
+  attribute :holding_location, Solr::Array, "holding_location_tesim"
+  attribute :campus, Solr::Array, "campus_tesim"
+  attribute :rights_statement, Solr::Array, "rights_statement_tesim"
+  attribute :bibliographic_citation, Solr::Array, "bibliographic_citation_tesim"
 
 end
