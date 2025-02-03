@@ -1,0 +1,25 @@
+terms:
+- id: IUB
+  term: IU Bloomington
+  active: true
+- id: IUI
+  term: IU Indianapolis
+  active: true
+- id: IUC
+  term: IU Columbus
+  active: true
+- id: IUE
+  term: IU East
+  active: true
+- id: IUK
+  term: IU Kokomo
+  active: true
+- id: IUN
+  term: IU Northwest
+  active: true
+- id: IUSB
+  term: IU South Bend
+  active: true
+- id: IUS
+  term: IU Southeast
+  active: true
