@@ -18,11 +18,7 @@
               <%= render 'representative_media', presenter: @presenter, viewer: true %>
             </div>
           <% end %>
-          <div class="col-sm-3 text-center">
-            <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? %>
-            <%= render 'citations', presenter: @presenter %>
-            <%= render 'social_media' %>
-          </div>
+          <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? %>
           <div class="col-sm-9">
             <%= render 'work_description', presenter: @presenter %>
             <%= render 'metadata', presenter: @presenter %>
