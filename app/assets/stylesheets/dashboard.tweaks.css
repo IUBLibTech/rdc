@@ -2,3 +2,17 @@ body.dashboard {
   padding-top: 0 !important;
   background-color: white !important;
 }
+
+/* Access restrictions (rights_statement) checkboxes */
+div.form-group.check_boxes {
+  div.checkbox {
+    label {
+      input {
+        display: inline;
+        margin: 0.5em;
+        vertical-align: middle;
+        width: 2em;
+      }
+    }
+  }
+}
