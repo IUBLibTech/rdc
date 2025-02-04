@@ -1,9 +1,11 @@
 <% if presenter.representative_id.present? && presenter.representative_presenter.present? %>
-  <% if defined?(viewer) && viewer %>
-    <%= iiif_viewer_display presenter %>
-  <% else %>
-    <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter  %>
-  <% end %>
+  <div class="col-sm-3 text-center">
+    <% if defined?(viewer) && viewer %>
+      <%= iiif_viewer_display presenter %>
+    <% else %>
+      <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter  %>
+    <% end %>
+  </div>
 <% else %>
   <%# no default image %>
 <% end %>
