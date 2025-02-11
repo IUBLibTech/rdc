@@ -84,10 +84,10 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field "title_tesim", label: "Title", itemprop: 'name', if: false
     config.add_index_field "abstract_tesim", label: "Summary",  itemprop: 'summary', helper_method: :render_markdown
-    config.add_index_field "domain_subject_tesim", label: 'Domain Subject', itemprop: 'keywords', link_to_facet: "domain_subject_sim"
-    config.add_index_field "campus_tesim", label: 'Campus', itemprop: 'campus', link_to_facet: "campus_sim", helper_method: :campus_helper
-    config.add_index_field "holding_location_tesim", label: 'Hosting Unit', link_to_facet: "holding_location_sim"
-    config.add_index_field "rights_statement_tesim", label: 'Access Restrictions', link_to_facet: 'rights_statement_sim'
+    # config.add_index_field "domain_subject_tesim", label: 'Domain Subject', itemprop: 'keywords', link_to_facet: "domain_subject_sim"
+    # config.add_index_field "campus_tesim", label: 'Campus', itemprop: 'campus', link_to_facet: "campus_sim", helper_method: :campus_helper
+    # config.add_index_field "holding_location_tesim", label: 'Hosting Unit', link_to_facet: "holding_location_sim"
+    # config.add_index_field "rights_statement_tesim", label: 'Access Restrictions', link_to_facet: 'rights_statement_sim'
     # config.add_index_field "subject_tesim", itemprop: 'about', link_to_facet: "subject_sim"
     # config.add_index_field "creator_tesim", itemprop: 'creator', link_to_facet: "creator_sim"
     # config.add_index_field "contributor_tesim", itemprop: 'contributor', link_to_facet: "contributor_sim"
@@ -107,8 +107,8 @@ class CatalogController < ApplicationController
     # config.add_index_field "time_frame_tesim", link_to_facet: "time_frame_sim"
     # config.add_index_field "hosting_unit_tesim", link_to_facet: "hosting_unit_sim"
     # config.add_index_field "public_contact_tesim", link_to_facet: "public_contact_sim"
-    config.add_index_field Hydra.config.permissions.embargo.release_date, label: "Embargo release date", helper_method: :human_readable_date
-    config.add_index_field Hydra.config.permissions.lease.expiration_date, label: "Lease expiration date", helper_method: :human_readable_date
+    # config.add_index_field Hydra.config.permissions.embargo.release_date, label: "Embargo release date", helper_method: :human_readable_date
+    # config.add_index_field Hydra.config.permissions.lease.expiration_date, label: "Lease expiration date", helper_method: :human_readable_date
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
