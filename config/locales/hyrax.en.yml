@@ -47,15 +47,15 @@ en:
     hints:
       data_set:
         title: 'Title of dataset'
-        abstract: 'Provide a short (one-sentence) description of the dataset, which will appear on the search results page.'
+        abstract: 'Provide a short (one-sentence) description of the dataset, which will appear on the search results page. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         related_url: 'Provide a link to access the documentation for the dataset'
-        rights_notes: 'List the process or steps required to access the dataset'
+        rights_notes: 'List the process or steps required to access the dataset. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         time_period: 'Provide the year(s) or range of years of available data within the dataset, e.g. 1990-2010.'
         subject: 'List key subject terms related to the dataset, using the Library of Congress Subject Headings (https://id.loc.gov/authorities/subjects.html)'
         geographic_location: 'Describe the geographic location(s) covered in dataset, e.g. "United States," "Indiana"'
         domain_subject: 'List one or more broad subject areas from the following list: https://go.iu.edu/8sqi'
         creator: 'The group or individual who created the dataset, if applicable.'
-        description: 'Provide an abstract- or paragraph-length description of the dataset. You may use Markdown to incorporate formatting, and/or hyperlinks (This description should be longer than the one-sentence that will show up on the search results page, and will show up on the dataset page).'
+        description: 'Provide an abstract- or paragraph-length description of the dataset. This description should be longer than the one-sentence that will show up on the search results page, and will show up on the dataset page. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         location_physical: 'List the location(s) where the data are stored, e.g. "Cloud," "Slate Project"'
         digital_specifications: 'List the format(s) of data files. Example: CSV, SAS, text'
         expert: 'Provide the name and email of person or people to reach out to for questions about the dataset, formatted as follows: John Doe (jdoe@iu.edu).'

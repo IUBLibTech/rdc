@@ -5,5 +5,5 @@
               data: { 'autocomplete-url' => "/authorities/search/local/subjects",
                       'autocomplete' => key }
             },
-            hint: auto_link(I18n.t("simple_form.hints.data_set.#{key}")),
+            hint: auto_link(I18n.t("simple_form.hints.data_set.#{key}"), html: { target: '_blank' }),
             required: f.object.required?(key) %>
