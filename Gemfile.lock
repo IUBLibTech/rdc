@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rtomayko/posix-spawn.git
+  revision: 0fce38ed5458b638eda5f3bb711903424a4366db
+  ref: refs/pull/93/head
+  specs:
+    posix-spawn (0.3.15)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -613,7 +620,6 @@ GEM
     parslet (2.0.0)
     pg (1.5.6)
     popper_js (1.16.1)
-    posix-spawn (0.3.15)
     psych (3.3.4)
     public_suffix (5.0.5)
     puma (5.6.8)
@@ -984,6 +990,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   openseadragon (>= 0.2.0)
   pg (~> 1.1)
+  posix-spawn!
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.7)

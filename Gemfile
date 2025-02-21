@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem "posix-spawn", github: "https://github.com/rtomayko/posix-spawn/pull/93"
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.3'
