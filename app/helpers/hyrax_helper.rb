@@ -18,4 +18,8 @@ module HyraxHelper
       'en' => 'English'
     }
   end
+
+  def hint_with_links(key)
+    auto_link(I18n.t("simple_form.hints.data_set.#{key}"), html: { target: '_blank' })
+  end
 end

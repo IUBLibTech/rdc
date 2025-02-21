@@ -3,4 +3,5 @@
     collection: campus_service.select_active_options,
     include_blank: true,
     item_helper: campus_service.method(:include_current_value),
+    hint: hint_with_links(key),
     input_html: { class: 'form-control' } %>
