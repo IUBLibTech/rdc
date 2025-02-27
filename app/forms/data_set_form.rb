@@ -17,4 +17,14 @@ class DataSetForm < Hyrax::Forms::PcdmObjectForm(DataSet)
   # model attribute, make it virtual
   #
   # property :user_input_not_destined_for_the_model, virtual: true
+
+  # reposition :description, otherwise retain field order
+  def primary_terms
+    ordered_terms = super.dup
+    if ordered_terms.include?(:description)
+      ordered_terms.delete(:description)
+      ordered_terms.insert(2, :description)
+    end
+    ordered_terms
+  end
 end
