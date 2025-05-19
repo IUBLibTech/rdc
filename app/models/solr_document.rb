@@ -31,6 +31,7 @@ class SolrDocument
   attribute :abstract, Solr::Array, "abstract_tesim"
   attribute :description, Solr::Array, "description_tesim"
   attribute :related_url, Solr::Array, "related_url_tesim"
+  attribute :references, Solr::Array, "references_tesim"
   attribute :rights_notes, Solr::Array, "rights_notes_tesim"
   attribute :time_period, Solr::Array, "time_period_tesim"
   attribute :subject, Solr::Array, "subject_tesim"

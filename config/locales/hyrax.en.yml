@@ -49,6 +49,7 @@ en:
         title: 'Title of dataset'
         abstract: 'Provide a short (one-sentence) description of the dataset, which will appear on the search results page. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         related_url: 'Provide a link to access the documentation for the dataset'
+        references: 'Provide a link to access the Featured Data/Canvas course for the dataset'
         rights_notes: 'List the process or steps required to access the dataset. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         time_period: 'Provide the year(s) or range of years of available data within the dataset, e.g. 1990-2010.'
         subject: 'List key subject terms related to the dataset, using the Library of Congress Subject Headings (https://id.loc.gov/authorities/subjects.html)'
@@ -70,6 +71,7 @@ en:
       defaults:
         abstract: 'Summary'
         related_url: 'Documentation'
+        references: 'Featured Data/Canvas course'
         rights_notes: 'Access instructions'
         time_period: 'Timeframe'
         subject: 'Keyword subject'
