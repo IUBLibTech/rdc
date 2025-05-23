@@ -17,3 +17,12 @@
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0, 0, 0, 0.9);
 }
+
+a.page-link {
+    color: #2e74b2;
+}
+
+a.page-link:hover{
+    color: #00385f;
+    text-decoration:underline;
+}
