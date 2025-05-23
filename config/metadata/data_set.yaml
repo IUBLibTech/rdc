@@ -47,6 +47,19 @@ attributes:
       primary: true
       multiple: true
 
+  references:
+    display_label: Featured Data/Canvas courses
+    predicate: http://purl.org/dc/terms/references
+    type: string
+    multiple: true
+    index_keys:
+      - 'references_tesim'
+      - 'references_sim'
+    form:
+      required: false
+      primary: true
+      multiple: true
+
   rights_notes:
     display_label: Access Instructions
     predicate: http://purl.org/dc/elements/1.1/rights
