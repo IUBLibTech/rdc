@@ -43,6 +43,8 @@ en:
     institution_name_full: Indiana University
     product_name: Research Data Catalog
     product_twitter_handle: "@SamveraRepo"
+    controls:
+      home: Catalog Home
   simple_form:
     hints:
       data_set:
