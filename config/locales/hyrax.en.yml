@@ -50,7 +50,7 @@ en:
       data_set:
         title: 'Title of dataset'
         abstract: 'Provide a short (one-sentence) description of the dataset, which will appear on the search results page. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
-        related_url: 'Provide a link to access the documentation for the dataset'
+        related_url: 'Provide a link to access the documentation for the dataset. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         references: 'Provide a link to access the Featured Data/Canvas course for the dataset'
         rights_notes: 'List the process or steps required to access the dataset. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         time_period: 'Provide the year(s) or range of years of available data within the dataset, e.g. 1990-2010.'
