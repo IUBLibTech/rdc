@@ -61,7 +61,7 @@ en:
         description: 'Provide an abstract- or paragraph-length description of the dataset. This description should be longer than the one-sentence that will show up on the search results page, and will show up on the dataset page. You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
         location_physical: 'List the location(s) where the data are stored, e.g. "Cloud," "Slate Project"'
         digital_specifications: 'List the format(s) of data files. Example: CSV, SAS, text'
-        expert: 'Provide the name and email of person or people to reach out to for questions about the dataset, formatted as follows: John Doe (jdoe@iu.edu). You may use basic Markdown for formatting and/or hyperlinks (https://www.markdownguide.org/cheat-sheet/#basic-syntax)'
+        expert: 'Provide the name and email of person or people to reach out to for questions about the dataset, formatted as follows: John Doe (jdoe@iu.edu), or Website Link (https://www.iu.edu/index.html)'
         holding_location: 'Provide the campus unit(s) hosting the dataset, such as the school, department, or institute that purchased the dataset and/or is facilitating access.'
         source_identifier: # (N/A - source identifier is the unique identifier for the data catalog, so nothing for depositors to enter? Confirm that this is correct.)
         source : # (Same as above)

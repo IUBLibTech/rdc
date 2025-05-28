@@ -10,7 +10,7 @@
 <%= presenter.attribute_to_html(:creator, label: 'Creator', html_dl: true) %>
 <%= presenter.attribute_to_html(:location_physical, label: 'Data Location', html_dl: true) %>
 <%= presenter.attribute_to_html(:digital_specifications, label: 'File Format(s)', html_dl: true) %>
-<%= presenter.attribute_to_html(:expert, label: 'Public Contact', render_as: :markdown, html_dl: true) %>
+<%= presenter.attribute_to_html(:expert, label: 'Public Contact', render_as: :external_link, html_dl: true) %>
 <%= presenter.attribute_to_html(:holding_location, label: 'Hosting Unit', render_as: :faceted, html_dl: true) %>
 <%= presenter.attribute_to_html(:campus, label: 'Campus', render_as: :campus, html_dl: true) %>
 <%= presenter.attribute_to_html(:rights_statement, label: 'Access Restrictions', render_as: :faceted, html_dl: true) %>
