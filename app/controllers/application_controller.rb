@@ -12,4 +12,17 @@ class ApplicationController < ActionController::Base
   def login
     redirect_post('/users/auth/cas', options: {authenticity_token: :auto})
   end
+
+  before_action :set_locale
+
+  def set_locale
+    if params[:locale].present?
+      I18n.locale = constrained_locale || I18n.default_locale
+      params[:locale] = I18n.locale.to_s
+    end
+  end
+
+  def constrained_locale
+    return params[:locale] if params[:locale].in?(Object.new.extend(HyraxHelper).available_translations)
+  end
 end
