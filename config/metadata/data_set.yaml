@@ -48,7 +48,7 @@ attributes:
       multiple: true
 
   references:
-    display_label: Featured Data/Canvas courses
+    display_label: Research Data Commons Learning Module(s)
     predicate: http://purl.org/dc/terms/references
     type: string
     multiple: true
