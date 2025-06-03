@@ -3,6 +3,10 @@ module FacetHelper
     Hyrax::CampusService.new.label(value)
   end
 
+  def access_restrictions_label(value)
+    Hyrax::RightsStatementService.new.label(value)
+  end
+
   def campus_helper(**options)
     options[:value].map { |value| link_to_campus_facet(value, 'campus_sim') }.join("<br/>".html_safe).html_safe
   end

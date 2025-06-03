@@ -54,7 +54,7 @@ class CatalogController < ApplicationController
     config.add_facet_field "domain_subject_sim", limit: 10, label: 'Domain Subject'
     config.add_facet_field "campus_sim", limit: 10, label: 'Campus', helper_method: :campus_label
     config.add_facet_field "holding_location_sim", limit: 10, label: 'Hosting Unit'
-    config.add_facet_field "rights_statement_sim", limit: 10, label: 'Access Restrictions'
+    config.add_facet_field "rights_statement_sim", limit: 10, label: 'Access Restrictions', helper_method: :access_restrictions_label
     # config.add_facet_field "human_readable_type_sim", label: "Type", limit: 5
     # config.add_facet_field "resource_type_sim", label: "Resource Type", limit: 5
     # config.add_facet_field "creator_sim", limit: 5
