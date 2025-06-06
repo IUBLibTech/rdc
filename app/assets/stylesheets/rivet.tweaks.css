@@ -22,6 +22,11 @@ a.page-link {
     color: #2e74b2;
 }
 
+.page-item.active .page-link {
+    background-color: #2e74b2;
+    border-color: #2e74b2;
+}
+
 a.page-link:hover{
     color: #00385f;
     text-decoration:underline;
