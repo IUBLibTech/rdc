@@ -31,3 +31,11 @@ a.page-link:hover{
     color: #00385f;
     text-decoration:underline;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #2e74b2;
+}
+
+.badge {
+    margin-left: 1em;
+}
