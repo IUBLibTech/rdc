@@ -3,7 +3,7 @@ body.dashboard {
   background-color: white !important;
 }
 
-/* Access restrictions (rights_statement) checkboxes */
+/* Access eligibility (rights_statement) checkboxes */
 div.form-group.check_boxes {
   div.checkbox {
     label {

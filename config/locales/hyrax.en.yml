@@ -89,5 +89,5 @@ en:
         # source: 'Source" # not displayed, unchanged
         # source_metadata_identifier: 'Source metadata identifier' # not displayed, unchanged
         # campus: 'Campus' # unchanged
-        rights_statement: 'Access restrictions'
+        rights_statement: 'Access eligibility'
         bibliographic_citation: 'Bibliographic citation'

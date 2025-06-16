@@ -54,7 +54,7 @@ class CatalogController < ApplicationController
     config.add_facet_field "domain_subject_sim", limit: 10, label: 'Domain Subject'
     config.add_facet_field "campus_sim", limit: 10, label: 'Campus', helper_method: :campus_label
     config.add_facet_field "holding_location_sim", limit: 10, label: 'Hosting Unit'
-    config.add_facet_field "rights_statement_sim", limit: 10, label: 'Access Restrictions', helper_method: :access_restrictions_label
+    config.add_facet_field "rights_statement_sim", limit: 10, label: 'Access Eligibility', helper_method: :access_restrictions_label
     # config.add_facet_field "human_readable_type_sim", label: "Type", limit: 5
     # config.add_facet_field "resource_type_sim", label: "Resource Type", limit: 5
     # config.add_facet_field "creator_sim", limit: 5
@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
     # config.add_index_field "domain_subject_tesim", label: 'Domain Subject', itemprop: 'keywords', link_to_facet: "domain_subject_sim"
     # config.add_index_field "campus_tesim", label: 'Campus', itemprop: 'campus', link_to_facet: "campus_sim", helper_method: :campus_helper
     # config.add_index_field "holding_location_tesim", label: 'Hosting Unit', link_to_facet: "holding_location_sim"
-    # config.add_index_field "rights_statement_tesim", label: 'Access Restrictions', link_to_facet: 'rights_statement_sim'
+    # config.add_index_field "rights_statement_tesim", label: 'Access Eligibility', link_to_facet: 'rights_statement_sim'
     # config.add_index_field "subject_tesim", itemprop: 'about', link_to_facet: "subject_sim"
     # config.add_index_field "creator_tesim", itemprop: 'creator', link_to_facet: "creator_sim"
     # config.add_index_field "contributor_tesim", itemprop: 'contributor', link_to_facet: "contributor_sim"

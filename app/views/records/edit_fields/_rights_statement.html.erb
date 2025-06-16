@@ -1,6 +1,6 @@
 <% rights_statements = Hyrax.config.rights_statement_service_class.new %>
 <%= f.input :rights_statement,
-    label: 'Access Restrictions',
+    label: 'Access Eligibility',
     as: :check_boxes,
     collection: rights_statements.select_active_options,
     include_blank: true,
