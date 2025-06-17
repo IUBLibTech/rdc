@@ -2,8 +2,8 @@
 
 module Hyrax
   module Renderers
-    # This is used by PresentsAttributes to show access restrictions (faculty, staff, public etc.)
-    #   e.g.: presenter.attribute_to_html(:access render_as: :access)
+    # This is used by PresentsAttributes to show access eligibility (faculty, staff, public etc.)
+    #   e.g.: presenter.attribute_to_html(:rights_statement render_as: :access)
     class AccessAttributeRenderer < FacetedAttributeRenderer
       private
 
