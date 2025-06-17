@@ -216,7 +216,7 @@ attributes:
       multiple: true
 
   rights_statement:
-    display_label: Access Restrictions
+    display_label: Access Eligibility
     predicate: http://www.europeana.eu/schemas/edm/rights
     type: string
     multiple: true
