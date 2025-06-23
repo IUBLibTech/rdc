@@ -27,24 +27,25 @@
       </div>
     </div><!-- /.card -->
 
-    <div class="card">
-      <div class="card-header">
-        <h2 class="card-title"><%= t('hyrax.base.show.relationships') %></h2>
+    <% if @presenter.editor? %>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title"><%= t('hyrax.base.show.relationships') %></h2>
+        </div>
+        <div class="card-body">
+          <%= render 'relationships', presenter: @presenter %>
+        </div>
       </div>
-      <div class="card-body">
-        <%= render 'relationships', presenter: @presenter %>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card-header">
-        <h2 class="card-title"><%= t('.items') %></h2>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title"><%= t('.items') %></h2>
+        </div>
+        <div class="card-body">
+          <%= render 'items', presenter: @presenter %>
+        </div>
       </div>
-      <div class="card-body">
-        <%= render 'items', presenter: @presenter %>
-      </div>
-    </div>
-
+    <% end %>
     <%# TODO: we may consider adding these partials in the future %>
     <%# = render 'sharing_with', presenter: @presenter %>
     <%# = render 'user_activity', presenter: @presenter %>
