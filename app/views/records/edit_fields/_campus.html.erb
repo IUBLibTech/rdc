@@ -1,7 +1,11 @@
 <% campus_service = Hyrax::CampusService.new %>
-<%= f.input :campus, as: :multi_value_select,
+<%= f.input :campus, as: :check_boxes,
     collection: campus_service.select_active_options,
     include_blank: true,
     item_helper: campus_service.method(:include_current_value),
+    collection_wrapper_tag: :div,
+    item_wrapper_tag: :div,
     hint: hint_with_links(key),
     input_html: { class: 'form-control' } %>
+
+
