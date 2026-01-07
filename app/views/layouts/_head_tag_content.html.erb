@@ -16,7 +16,7 @@ signed in %>
 <!-- Google Scholar metadata -->
 <%= yield :gscholar_meta %>
 
-<title><%= content_for?(:page_title) ? yield(:page_title) : default_page_title %></title>
+ <title><%= content_for?(:dashboard_page_title) ? yield(:dashboard_page_title) : content_for?(:page_title) ? yield(:page_title) : default_page_title %></title>
 
 <!-- application css -->
 <%= stylesheet_link_tag 'application' %>
