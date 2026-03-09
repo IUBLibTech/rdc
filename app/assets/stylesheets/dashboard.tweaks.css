@@ -16,3 +16,8 @@ div.form-group.check_boxes {
     }
   }
 }
+
+/*  User Activity Log grid */
+div.activity-display {
+  height: 420px;
+}
