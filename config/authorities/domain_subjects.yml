@@ -1,0 +1,31 @@
+terms:
+- id: Health & Medicine
+  term: Health & Medicine
+  active: true
+- id: Education
+  term: Education
+  active: true
+- id: Business
+  term: Business
+  active: true
+- id: Media
+  term: Media
+  active: true
+- id: Music
+  term: Music
+  active: true
+- id: Arts & Humanities
+  term: Arts & Humanities
+  active: true
+- id: Natural & Mathematical Sciences
+  term: Natural & Mathematical Sciences
+  active: true
+- id: Social & Historical Sciences
+  term: Social & Historical Sciences
+  active: true
+- id: Public Policy & Public Affairs
+  term: Public Policy & Public Affairs
+  active: true
+- id: Informatics, Computing, & Engineering
+  term: Informatics, Computing, & Engineering
+  active: true
