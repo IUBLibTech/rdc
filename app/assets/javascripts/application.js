@@ -12,4 +12,5 @@
 //= require blacklight/blacklight
 //= require blacklight_gallery
 //= require hyrax
+//= require formatting
 
