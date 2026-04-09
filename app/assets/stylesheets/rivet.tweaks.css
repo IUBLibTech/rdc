@@ -39,3 +39,7 @@ a.page-link:hover{
 .badge {
     margin-left: 1em;
 }
+
+.visibility-link .badge {
+    font-weight: 700;
+}

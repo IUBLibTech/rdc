@@ -34,7 +34,6 @@
       <% unless @presenter.total_viewable_items.blank? %>
           <div class="hyc-bugs">
             <div class="hyc-item-count">
-              <b><%= @presenter.total_viewable_items %></b>
               <%= pluralize(@presenter.total_viewable_items, t('.item_count')) %></div>
 
             <% unless @presenter.creator.blank? %>
