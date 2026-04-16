@@ -3,6 +3,18 @@ body.dashboard {
   background-color: white !important;
 }
 
+div.sidebar {
+  background-color: #454545;
+}
+
+div.sidebar div.profile {
+  background-color: #434343;
+}
+
+nav.breadcrumb {
+  background-color: #ffffff;
+}
+
 /* Access eligibility (rights_statement) checkboxes */
 div.form-group.check_boxes {
   div.checkbox {
@@ -17,7 +29,22 @@ div.form-group.check_boxes {
   }
 }
 
+/* Accessibility workflow panel */
+div.panel-workflow div.card-header {
+  color: #000000;
+}
+
+
 /*  User Activity Log grid */
 div.activity-display {
   height: 400px;
+}
+
+p.help-block a {
+  text-decoration: underline;
+}
+
+h3.text-faded {
+  color: #45587D;
+  margin-top: 0;
 }

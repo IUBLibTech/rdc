@@ -16,17 +16,19 @@
 
     <div class="col-6">
       <h2><%= t("hyrax.dashboard.current_proxies") %></h2>
-      <table class="table table-sm table-striped" id="authorizedProxies">
-        <tbody>
-        <% user.can_receive_deposits_from.each do |depositor| %>
-            <tr><td class="depositor-name"><%= depositor.name %></td>
-              <td><%= link_to(I18n.t('hyrax.dashboard.proxy_delete'), hyrax.user_depositor_path(user, depositor),
-                              method: :delete,
-                              class: "remove-proxy-button btn btn-danger") %>
-              </td></tr>
-        <% end %>
-        </tbody>
-      </table>
+      <% if user.can_receive_deposits_from.count > 0 %>
+        <table class="table table-sm table-striped" id="authorizedProxies">
+          <tbody>
+          <% user.can_receive_deposits_from.each do |depositor| %>
+              <tr><td class="depositor-name"><%= depositor.name %></td>
+                <td><%= link_to(I18n.t('hyrax.dashboard.proxy_delete'), hyrax.user_depositor_path(user, depositor),
+                                method: :delete,
+                                class: "remove-proxy-button btn btn-danger") %>
+                </td></tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>
