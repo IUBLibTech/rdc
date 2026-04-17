@@ -10,4 +10,11 @@
     <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
     <%= render_constraints(params.merge(route_set: hyrax)) %>
   </div>
+
+<script type="application/javascript">
+    $(function() {
+      $("span.applied-filter span:contains(\"Hyrax::AdministrativeSet\")").text("Admin Set").attr('title', 'Admin Set');
+    });
+</script>
+
 <% end %>

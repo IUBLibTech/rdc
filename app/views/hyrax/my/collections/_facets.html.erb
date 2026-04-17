@@ -7,3 +7,17 @@
   <span class="list-filters-label"><%= t("hyrax.dashboard.my.facet_label.collections") %></span>
   <%= facets %>
 </div>
+
+<script type="application/javascript">
+  $("button#collection_type_gid_ssim").click(function() {
+    $("ul#collection_type_gid_ssim-dropdown-options a:contains(\"Admin Set\")").closest("li.dropdown-item").remove();
+    $("ul#collection_type_gid_ssim-dropdown-options a:contains(\"Hyrax::AdministrativeSet\")").text("Admin  Set");
+
+    let selected_facet = $("ul#collection_type_gid_ssim-dropdown-options span:contains(\"Hyrax::AdministrativeSet\")")
+    if (selected_facet !== null) {
+        selected_facet.text("Admin Set");
+        selected_facet.after("<a class=\"selected-facet\" rel=\"nofollow\" href=\"/dashboard/collections?locale=en&amp;route_set=%23%3CActionDispatch%3A%3ARouting%3A%3ARoutesProxy%3A0x00007f6b5c926bd8%3E\"><span class=\"remove-icon\" aria-hidden=\"true\">✖</span><span class=\"sr-only visually-hidden\">[remove]</span></a>");
+    }
+
+  });
+</script>

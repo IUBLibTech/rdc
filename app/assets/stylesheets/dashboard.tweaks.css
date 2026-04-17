@@ -3,6 +3,10 @@ body.dashboard {
   background-color: white !important;
 }
 
+.selected-facet {
+  margin-right: 1.5em;
+}
+
 /* Access eligibility (rights_statement) checkboxes */
 div.form-group.check_boxes {
   div.checkbox {
