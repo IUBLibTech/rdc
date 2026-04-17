@@ -3,6 +3,25 @@ body.dashboard {
   background-color: white !important;
 }
 
+div.sidebar {
+  background-color: #454545;
+}
+
+div.sidebar div.profile {
+  background-color: #434343;
+}
+
+nav.breadcrumb {
+  background-color: #ffffff;
+  padding: 0 0 0 1em;
+}
+
+nav.breadcrumb a {
+  height: 2.8rem;
+  display: inline-block;
+  align-content: center
+}
+
 /* Access eligibility (rights_statement) checkboxes */
 div.form-group.check_boxes {
   div.checkbox {
@@ -17,7 +36,185 @@ div.form-group.check_boxes {
   }
 }
 
+
+/* Accessibility workflow panel */
+div.panel-workflow div.card-header {
+  color: #000000;
+}
+
 /*  User Activity Log grid */
 div.activity-display {
   height: 400px;
+}
+
+/* Navigation accessibility */
+.nav-link, .nav-search, div.search-widgets, div.search-widgets div, span.applied-filter {
+  height: 2.8rem;
+}
+
+span.applied-filter span.constraint-value {
+  height: 2.8rem;
+  align-content: center;
+  display: block;
+}
+
+a#file_download {
+  height: 2.8rem;
+  display: block;
+}
+
+#search-field-header, input[type="search"] {
+  height: 2.8rem;
+}
+
+.facet-field-heading, .facet-field-heading button {
+  height: 2.8rem;
+}
+
+ul.pagination li, ul.pagination li a, ul.pagination li span {
+  height: 2.8rem;
+  align-content: center;
+  min-width: 2.8rem;
+  text-align: center;
+  display: inline-block;
+}
+
+section.pagination div.page-links {
+  display: flex;
+}
+
+section.pagination div.page-links a {
+  display: block;
+  height: 2.8rem;
+  color: #535A5F;
+}
+
+section.pagination div.page-links a[rel="prev"] {
+  margin-right: 0.25rem
+}
+
+section.pagination div.page-links a[rel="next"] {
+  margin-left: 0.25rem
+}
+
+section.pagination div.page-links span {
+  margin: 0 0.25rem
+}
+
+span.btn.disabled {
+  opacity: 0.8;
+}
+
+.btn-primary, button.btn-primary {
+  background-color: #0056B3;
+  border-color: #0056B3;
+  height: 2.8rem;
+  align-content: center;
+}
+
+button.btn-danger {
+  height: 2.8rem;
+}
+
+button.btn-secondary, a.btn-secondary, span.btn-outline-secondary.active:not(:disabled):not(.disabled) {
+  background-color: #53595F;
+  height: 2.8rem;
+  align-content: center;
+}
+
+button.btn-outline-secondary, a.btn-outline-secondary {
+  color: #53595F;
+  border-color: #53595F;
+  align-content: center;
+}
+
+a.btn-danger {
+  background-color: #A72925;
+  height: 2.8rem;
+  align-content: center;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+#collections-list-table th {
+  vertical-align: middle;
+}
+
+/* link interactive element size requirements */
+h3.search-result-title a {
+  display: block;
+  height: 2.8rem;
+  align-content: end;
+  margin-top: -1rem;
+}
+
+ul.tabular li.attribute-admin_set a, ul.tabular li.attribute-domain_subject a, ul.tabular li.attribute-holding_location a, ul.tabular li.attribute-campus a,
+ ul.tabular li.attribute-rights_statement a, ul.tabular li.attribute-title a, ul.tabular li.attribute-expert {
+  height: 2.8rem;
+  display: block;
+}
+
+ul.tabular li.attribute-expert a {
+  display: inline-block;
+  height: 2.8rem;
+}
+
+.ul-links {
+  list-style-type: disc !important;
+  margin-bottom: 0;
+}
+
+table.table-striped div.media {
+  height: 2.8rem;
+}
+
+table.table-striped div.media p.media-heading {
+  float: left;
+}
+
+table.table-striped div.media span {
+  padding-left: 1em;
+}
+
+table.table-striped div.media p.media-heading a, table.table-striped td.attribute-filename a {
+  height: 2.8rem;
+  display: block;
+}
+
+div.hyc-bl-results ul li a {
+  height: 2.8rem;
+  display: block;
+}
+
+a.before-more-details {
+  float: left;
+  margin-right: 0.5em;
+}
+
+/* text visibility */
+.search-result-wrapper .collection-counts-wrapper .collection-counts-item {
+  color: #525252 !important;
+}
+
+div.work-type-tag {
+  color: #53595F;
+}
+
+span.btn-outline-secondary {
+  color: #53595F;
+}
+
+/* badge visibility */
+span.badge-success {
+  background-color: #295B29;
+}
+
+span.badge-danger {
+  background-color: #A72925;
+}
+
+span.badge-info {
+  background-color: #255A98
 }
