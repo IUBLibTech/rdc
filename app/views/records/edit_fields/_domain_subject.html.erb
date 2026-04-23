@@ -1,0 +1,11 @@
+<% domain_subject_service = Hyrax::DomainSubjectService.new %>
+<%= f.input :domain_subject, as: :check_boxes,
+    collection: domain_subject_service.select_active_options,
+    include_blank: true,
+    item_helper: domain_subject_service.method(:include_current_value),
+    collection_wrapper_tag: :div,
+    item_wrapper_tag: :div,
+    hint: hint_with_links(key),
+    input_html: { class: 'form-control' } %>
+
+
