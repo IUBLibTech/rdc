@@ -40,7 +40,6 @@ div.form-group.check_boxes {
   }
 }
 
-
 /* Accessibility workflow panel */
 div.panel-workflow div.card-header {
   color: #000000;
@@ -64,7 +63,7 @@ span.applied-filter span.constraint-value {
 
 a#file_download {
   height: 2.8rem;
-  display: block;
+  display: inline-block;
 }
 
 #search-field-header, input[type="search"] {
@@ -109,19 +108,13 @@ span.btn.disabled {
   opacity: 0.8;
 }
 
+button.close {
+  opacity: 0.65;
+}
+
 .btn-primary, button.btn-primary {
   background-color: #0056B3;
   border-color: #0056B3;
-  height: 2.8rem;
-  align-content: center;
-}
-
-button.btn-danger {
-  height: 2.8rem;
-}
-
-button.btn-secondary, a.btn-secondary, span.btn-outline-secondary.active:not(:disabled):not(.disabled) {
-  background-color: #53595F;
   height: 2.8rem;
   align-content: center;
 }
@@ -132,10 +125,41 @@ button.btn-outline-secondary, a.btn-outline-secondary {
   align-content: center;
 }
 
-a.btn-danger {
+button.btn-danger, input.btn-danger, a.btn-danger {
+  height: 2.8rem;
+}
+
+a.btn-danger, button.btn-danger {
   background-color: #A72925;
+  border-color: #A72925;
+  align-content: center;
+}
+
+a.btn.disabled.btn-danger {
+  opacity: 0.54;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+button.btn-success {
+  background-color: #2E6520;
+  border-color: #2E6520;
+}
+
+button.btn-secondary, a.btn-secondary, span.btn-outline-secondary.active:not(:disabled):not(.disabled) {
+  background-color: #53595F;
   height: 2.8rem;
   align-content: center;
+}
+
+#work-statistics H3, #work-statistics div {
+  display: inline-block;
+}
+
+a.collapse-header {
+  display: inline-block;
+  height: 2.8rem;
+  margin-bottom: -1em;
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {
@@ -146,6 +170,25 @@ table.table-striped tbody tr:nth-of-type(odd) {
   vertical-align: middle;
 }
 
+form#new_collection_type .btn-link, form#edit_collection_type .btn-link, #dashboard-collection-tab-content .btn-link{
+  background-color: #ffffff;
+  height: 2.8rem;
+  padding-top: 0.5em;
+  color: #005d8f;
+}
+
+div#savewidget a {
+  color: #005d8f;
+}
+
+span.controls-add-text {
+  color: #005d8f;
+}
+
+.sub-collections-wrapper a.btn-link, .works-wrapper a.btn-link {
+  color: #005d8f;
+}
+
 /* link interactive element size requirements */
 h3.search-result-title a {
   display: block;
@@ -154,13 +197,14 @@ h3.search-result-title a {
   margin-top: -1rem;
 }
 
-ul.tabular li.attribute-admin_set a, ul.tabular li.attribute-domain_subject a, ul.tabular li.attribute-holding_location a, ul.tabular li.attribute-campus a,
- ul.tabular li.attribute-rights_statement a, ul.tabular li.attribute-title a, ul.tabular li.attribute-expert {
+ul.tabular li.attribute-admin_set a, ul.tabular li.attribute-domain_subject a, ul.tabular li.attribute-holding_location a,
+ul.tabular li.attribute-campus a, ul.tabular li.attribute-rights_statement a, ul.tabular li.attribute-title a,
+ul.tabular li.attribute-related_url, ul.tabular li.attribute-references, ul.tabular li.attribute-expert {
   height: 2.8rem;
-  display: block;
+  display: inline-block;
 }
 
-ul.tabular li.attribute-expert a {
+ul.tabular li.attribute-related_url a, ul.tabular li.attribute-references a, ul.tabular li.attribute-expert a {
   display: inline-block;
   height: 2.8rem;
 }
@@ -184,12 +228,12 @@ table.table-striped div.media span {
 
 table.table-striped div.media p.media-heading a, table.table-striped td.attribute-filename a {
   height: 2.8rem;
-  display: block;
+  display: inline-block;
 }
 
 div.hyc-bl-results ul li a {
   height: 2.8rem;
-  display: block;
+  display: inline-block;
 }
 
 a.before-more-details {
@@ -220,5 +264,22 @@ span.badge-danger {
 }
 
 span.badge-info {
-  background-color: #255A98
+  background-color: #255A98;
+}
+
+span.badge-enabled {
+  background-color: #2C632C;
+}
+
+span.badge-disabled {
+  background-color: #535A5F;
+}
+
+p.help-block a, p.switch-upload-type a, div#fileupload p a, div#collapsePublic a {
+  text-decoration: underline;
+}
+
+h3.text-faded {
+  color: #45587D;
+  margin-top: 0;
 }
