@@ -12,7 +12,7 @@
       <table class="table table-striped datatable">
         <thead>
           <tr>
-            <th></th>
+            <th><span class="sr-only">Avatar</span></th>
             <th><%= t('.id_label') %></th>
             <th><%= t('.role_label') %></th>
             <% if @presenter.show_last_access? %>
@@ -23,9 +23,12 @@
         <tbody>
           <% @presenter.users.each do |user| %>
             <tr>
-              <td><%= link_to hyrax.user_path(user) do %>
-                    <%= image_tag(user.avatar.url(:thumb), width: 30) if user.avatar.file %>
+              <td>
+                <% if user.avatar.file %>
+                  <%= link_to hyrax.user_path(user) do %>
+                    <%= image_tag(user.avatar.url(:thumb), width: 30, alt: "Avatar") %>
                   <% end %>
+                <% end %>
               </td>
               <td><%= link_to user.email, hyrax.user_path(user) %></td>
               <td><% roles = @presenter.user_roles(user) %>

@@ -4,7 +4,7 @@
   <div class="form-group row">
     <%= f.label :avatar, t(".change_picture").html_safe, class: "col-4 col-form-label" %>
     <div class="col-8">
-      <%= image_tag @user.avatar.url(:thumb) if @user.avatar? %>
+      <%= image_tag @user.avatar.url(:thumb), alt: t("hyrax.users.index.avatar") if @user.avatar? %>
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
       <span class="form-text"><%= t('.help_change_picture_type') %></span>

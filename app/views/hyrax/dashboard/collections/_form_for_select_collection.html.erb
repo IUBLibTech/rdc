@@ -2,8 +2,8 @@
   <div class="modal-dialog text-left">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="col_add_title"><%= t("hyrax.collection.select_form.title") %></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2 class="modal-title" id="col_add_title"><%= t("hyrax.collection.select_form.title") %></h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <% if user_collections.blank? %>
@@ -17,6 +17,7 @@
                   <%= text_field_tag 'member_of_collection_label', @add_works_to_collection_label, disabled: true %>
                   <%= hidden_field_tag 'member_of_collection_ids', @add_works_to_collection %>
                 <% else %>
+<!--                  <label for="member_of_collection_ids" class="sr-only">Select the collection</label>-->
                   <%= text_field_tag 'member_of_collection_ids', nil,
                               prompt: :translate,
                               data: {

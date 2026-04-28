@@ -45,6 +45,7 @@
                       <li><%= responsibility_presenter.label %>
                         <%= link_to hyrax.admin_workflow_role_path(responsibility_presenter.responsibility),
                                     method: :delete,
+                                    title: "Delete #{user.name} from #{responsibility_presenter.label}",
                                     data: { confirm: t('.delete.confirm') } do %>
                           <span class="fa fa-remove"></span>
                         <% end %>
