@@ -7,7 +7,7 @@
                       class: 'btn btn-secondary submits-batches submits-batches-add',
                       data: { toggle: "modal", target: "#collection-list-container" } %>
       <% end %>
-      <% if presenter.work_featurable? %>
+      <% if presenter.work_featurable? && Flipflop.feature_works? %>
         <%= link_to t('.feature'), hyrax.featured_work_path(presenter, format: :json),
             data: { behavior: 'feature' },
             class: presenter.display_feature_link? ? 'btn btn-secondary' : 'btn btn-secondary collapse' %>
