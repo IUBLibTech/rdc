@@ -1,0 +1,12 @@
+<% if assets_with_deactivated_embargoes.count == 0 %>
+
+  <p class="text-center"><%= t('.missing') %></p>
+
+<% else %>
+
+  <% assets_with_deactivated_embargoes.each do |curation_concern| %>
+    <%= link_to curation_concern, edit_embargo_path(curation_concern) %> <%= visibility_badge(curation_concern.visibility) %>
+    <%= render partial: 'embargo_history', object: curation_concern.embargo_history %>
+  <% end %>
+
+<% end %>

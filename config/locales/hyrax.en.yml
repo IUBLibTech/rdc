@@ -54,6 +54,11 @@ en:
     product_twitter_handle: "@SamveraRepo"
     controls:
       home: Catalog Home
+    embargoes:
+      list_active_embargoes:
+        missing: There are no active embargoes in effect at this time.
+      list_deactivated_embargoes:
+        missing: There are no deactivated embargoes.
   simple_form:
     hints:
       data_set:
