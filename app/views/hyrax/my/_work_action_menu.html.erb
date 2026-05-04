@@ -34,7 +34,7 @@
       <% end %>
     </li>
 
-    <% if can? :transfer, document.id %>
+    <% if (can? :transfer, document.id) && Flipflop.enabled?(:transfer_works) %>
       <li class="dropdown-item" role="menuitem" tabindex="-1">
         <%= link_to(hyrax.new_work_transfer_path(document.id), id: 'action-transfer-work', class: 'itemicon itemtransfer', title: t("hyrax.dashboard.my.action.transfer")) do %>
           <%= t("hyrax.dashboard.my.action.transfer") %>
