@@ -54,6 +54,10 @@ en:
     product_twitter_handle: "@SamveraRepo"
     controls:
       home: Catalog Home
+    transfers:
+      new:
+        disabled: Transferring ownership of works is not allowed at this time.
+
   simple_form:
     hints:
       data_set:
