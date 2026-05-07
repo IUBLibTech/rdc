@@ -6,7 +6,7 @@ module Extensions
       # @param [String] key
       # @param [String] value
       def query_clause(type, key, value)
-        "_query_:\"{!#{type} f=#{key}}#{value.gsub('"', '\"')}\""
+        "_query_:\"{!#{type} f=#{key}}#{value.to_s.gsub('"', '\"')}\""
       end
     end
   end
