@@ -54,6 +54,8 @@ en:
     product_twitter_handle: "@SamveraRepo"
     controls:
       home: Catalog Home
+    dashboard:
+      proxy_disabled: Proxy management is currently disabled.
     embargoes:
       list_active_embargoes:
         missing: There are no active embargoes in effect at this time.
