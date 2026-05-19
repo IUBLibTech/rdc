@@ -61,6 +61,9 @@ en:
         missing: There are no active embargoes in effect at this time.
       list_deactivated_embargoes:
         missing: There are no deactivated embargoes.
+    transfers:
+      new:
+        disabled: Transferring ownership of works is not allowed at this time.
   simple_form:
     hints:
       data_set:
