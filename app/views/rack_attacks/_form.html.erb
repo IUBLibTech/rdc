@@ -1,0 +1,27 @@
+<div class="panel panel-default tabs">
+  <div class="tab-content">
+    <div id="about" class="tab-pane active">
+      <div class="panel panel-default labels">
+        <%= simple_form_for @rack_attack_config, url: rack_attack_path do |f| %>
+          <div class="panel-body">
+            <div class="field form-group">
+                <%= f.label :value, 'Rack Attack Config' %><br />
+              <p>Rack Attack is <b><%= Rack::Attack.enabled ? "Enabled" : "Disabled" %></b> |
+                Config TTL: <%= Rails.application.config_for(:rack_attack)[:config_ttl] %>s |
+                Throttle: <%= Rails.application.config_for(:rack_attack)[:throttle_limit] %>reqs/<%= Rails.application.config_for(:rack_attack)[:throttle_period] %>s</p>
+              <code>
+                <%= f.text_area :value, value: f.object.value, class: 'form-control', rows: 20, cols: 80,
+                                placeholder: DevOps::RackAttackConfig.default_config.to_yaml %>
+              </code>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <%= f.button :button, 'Reset', type: :reset %>
+            <%= link_to t(:'hyrax.pages.cancel'), hyrax.dashboard_path, class: 'btn btn-default pull-right' %>
+            <%= f.button :submit, class: 'btn btn-primary pull-right' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
