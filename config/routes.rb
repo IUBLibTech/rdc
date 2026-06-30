@@ -38,7 +38,8 @@ Rails.application.routes.draw do
 
   get '/login', to: 'application#login', as: 'login_url'
 
-  # rack attack config forms
+  # rack attack and robots.txt config forms
   resource :rack_attack, only: [:edit, :update]
+  resource :robots, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
