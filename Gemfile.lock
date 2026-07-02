@@ -271,6 +271,8 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     execjs (2.9.1)
+    factory_bot (4.11.1)
+      activesupport (>= 3.0.0)
     faraday (2.9.0)
       faraday-net_http (>= 2.0, < 3.2)
     faraday-encoding (0.0.5)
@@ -981,6 +983,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.8)
   dotenv-rails (~> 2.8)
+  factory_bot (~> 4.4)
   hydra-role-management
   hyrax (= 5.0.1)
   jbuilder (~> 2.7)

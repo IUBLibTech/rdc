@@ -65,4 +65,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  FactoryBot.find_definitions
+  config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Warden::Test::Helpers, type: :request
+  config.include Warden::Test::Helpers, type: :feature
+  config.before(:each, type: :view) { initialize_controller_helpers(view) }
 end
