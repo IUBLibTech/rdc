@@ -1,0 +1,14 @@
+shared:
+  config_key: rack_attack_config-default
+  config_ttl: 60
+  throttle_limit: 100
+  throttle_period: 120
+
+development:
+  enabled: false
+
+test:
+  enabled: false
+
+production:
+  enabled: true
