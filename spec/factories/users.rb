@@ -1,8 +1,9 @@
+# copied, modified from hyrax 5.0.1
 # frozen_string_literal: true
 FactoryBot.define do
   factory :user do
     sequence(:email) { |n| "user#{n}@example.com" }
-    password { 'password' }
+    encrypted_password { 'password' }
 
     transient do
       # Allow for custom groups when a user is instantiated.
@@ -10,12 +11,8 @@ FactoryBot.define do
       groups { [] }
     end
 
-    after(:build) do |user, evaluator|
-      User.group_service.add(user: user, groups: evaluator.groups)
-    end
-
     factory :admin do
-      groups { ['admin'] }
+      roles { [Role.where(name: 'admin').first_or_create] }
     end
 
     factory :user_with_mail do
