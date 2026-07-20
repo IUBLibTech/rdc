@@ -25,7 +25,7 @@ services:
       - db:/var/lib/postgresql/data
 
   redis:
-    image: bitnami/redis:6.2
+    image: soldevelo/redis:6.2
     env_file:
       - .docker.env
     volumes:
