@@ -1,3 +1,13 @@
+<% if request.path.include?('about') %>
+<footer id="footerGitHub">
+  <div>
+      <%= link_to(t('hyrax.product_name'), 'https://github.com/IUBLibTech/rdc') %>
+      <%= link_to(ENV['SOURCE_VERSION'], "https://github.com/IUBLibTech/rdc/releases/tag/#{ENV['SOURCE_VERSION']}") if ENV['SOURCE_VERSION'] %>
+      <!-- commit: <%= ENV['SOURCE_COMMIT'] %> -->
+  </div>
+</footer>
+<% end %>
+
 <footer class="rvt-footer-base">
   <div class="rvt-container-lg">
     <div class="rvt-footer-base__inner">

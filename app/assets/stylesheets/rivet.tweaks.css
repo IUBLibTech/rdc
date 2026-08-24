@@ -2,6 +2,22 @@
  * modifications to blend rivet styling with hyrax
  */
 
+/** Footer **/
+
+#footerGitHub {
+    background-color: #00274c;
+    text-align: center;
+}
+
+#footerGitHub a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footerGitHub  a:hover {
+    color: #990000;
+}
+
 /* footer width */
 .rvt-container-lg {
   max-width: 100%;
