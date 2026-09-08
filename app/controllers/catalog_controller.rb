@@ -5,7 +5,6 @@ class CatalogController < ApplicationController
 
   # This filter applies the hydra access controls
   before_action :enforce_show_permissions, only: :show
-  before_action :limit_per_page, only: :index
 
   def self.uploaded_field
     "system_create_dtsi"
@@ -41,7 +40,7 @@ class CatalogController < ApplicationController
 
     config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_results_collection_tool(:sort_widget)
-    config.add_results_collection_tool(:per_page_widget, if: :current_user)
+    config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
@@ -334,10 +333,5 @@ class CatalogController < ApplicationController
   # disable querying, storing blacklight Search records which are never used
   def find_search_session
     return nil
-  end
-
-  private
-  def limit_per_page
-    blacklight_config.max_per_page = 10 unless current_user.present?
   end
 end
