@@ -1,9 +1,8 @@
 <% if request.path.include?('about') %>
 <footer id="footerGitHub">
   <div>
-      <%= link_to(t('hyrax.product_name'), 'https://github.com/IUBLibTech/rdc') %>
-      <%= link_to(ENV['SOURCE_VERSION'], "https://github.com/IUBLibTech/rdc/releases/tag/#{ENV['SOURCE_VERSION']}") if ENV['SOURCE_VERSION'] %>
-      <!-- commit: <%= ENV['SOURCE_COMMIT'] %> -->
+    <%= link_to('RDC GitHub', 'https://github.com/IUBLibTech/rdc') %>
+    <%= link_to(ENV['SOURCE_COMMIT'].to_s.truncate(9), "https://github.com/IUBLibTech/rdc/tree/#{ENV['SOURCE_COMMIT']}") if ENV['SOURCE_COMMIT'] %>
   </div>
 </footer>
 <% end %>
