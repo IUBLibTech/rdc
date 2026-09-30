@@ -1,4 +1,4 @@
-FROM ghcr.io/samvera/hyrax/hyrax-base:hyrax-v5.0.1
+FROM ghcr.io/samvera/hyrax/hyrax-base:hyrax-v5.3.0
 
 COPY --chown=1001:101 . /app/samvera/hyrax-webapp/
 RUN bundle install --jobs "$(nproc)"
