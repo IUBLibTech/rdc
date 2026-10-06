@@ -81,3 +81,4 @@ gem 'repost'
 gem 'rack-attack', '~> 6.7'
 gem 'rdoc', '< 6.4.0'
 gem 'json', '< 3.0' # prevent updating to meet blacklight 7.43.0 requirements
+gem 'blacklight', '~> 7.42.0' # avoid blacklight 7.43.0 implicit dependency on activesupport 7+
