@@ -3,7 +3,7 @@ gem "posix-spawn", github: "https://github.com/rtomayko/posix-spawn/pull/93"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.11'
+ruby '3.3.12'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.7'
@@ -59,7 +59,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'hyrax', '5.3.0'
+gem 'hyrax', '5.3.1'
 
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'bootstrap', '~> 4.0'
