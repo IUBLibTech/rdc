@@ -20,7 +20,7 @@ class CatalogController < ApplicationController
     # config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials.insert(1, :openseadragon)
-    config.search_builder_class = Hyrax::CatalogSearchBuilder
+    config.search_builder_class = OnlyWorksCatalogSearchBuilder
 
     # Because too many times on Samvera tech people raise a problem regarding a failed query to SOLR.
     # Often, it's because they inadvertently exceeded the character limit of a GET request.
