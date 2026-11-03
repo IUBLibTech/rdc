@@ -12,5 +12,16 @@ RSpec.describe CatalogController do
         expect { get 'index', params: { q: 'test' } }.not_to change { Search.count }
       end
     end
+    context 'with documents' do
+      before do
+        FactoryBot.valkyrie_create(:collection)
+        FactoryBot.valkyrie_create(:data_set)
+      end
+      it 'only shows works' do
+        get :index
+        expect(assigns(:response).docs.size).to eq 1
+        expect(assigns(:response).docs.first).to be_work
+      end
+    end
   end
 end
