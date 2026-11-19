@@ -2,6 +2,8 @@
 name: rdc
 services:
   app:
+    profiles:
+      - dev
     build:
       context: .
     image: ghcr.io/iublibtech/rdc/rdc:latest
@@ -21,6 +23,8 @@ services:
     image: postgres:15
     env_file:
       - .docker.env
+    ports:
+      - "5437:5432"
     volumes:
       - db:/var/lib/postgresql/data
 
@@ -28,6 +32,8 @@ services:
     image: valkey/valkey:9
     env_file:
       - .docker.env
+    ports:
+      - "6384:6379"
     volumes:
       - valkey:/data
 
@@ -35,6 +41,8 @@ services:
     image: solr:8.11
     env_file:
       - .docker.env
+    ports:
+      - "8988:8983"
     command: solr-precreate rdc /opt/solr/server/configsets/hyraxconf
     volumes:
       - solr_home:/var/solr/data
