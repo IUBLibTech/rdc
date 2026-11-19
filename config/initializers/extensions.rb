@@ -16,4 +16,6 @@ Rails.application.config.to_prepare do
   Hyrax::Dashboard::CollectionsController.prepend Extensions::CatalogController::BlockFindSearchSession
   Hyrax::My::WorksController.prepend Extensions::CatalogController::BlockFindSearchSession
   Hyrax::My::CollectionsController.prepend Extensions::CatalogController::BlockFindSearchSession
+  # Fix referer "catalog" name collision
+  Hyrax::Breadcrumbs.prepend Extensions::Hyrax::Breadcrumbs::RefererFix
 end
