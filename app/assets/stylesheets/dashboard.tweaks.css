@@ -201,12 +201,14 @@ ul.tabular li.attribute-admin_set a, ul.tabular li.attribute-domain_subject a, u
 ul.tabular li.attribute-campus a, ul.tabular li.attribute-rights_statement a, ul.tabular li.attribute-title a,
 ul.tabular li.attribute-related_url, ul.tabular li.attribute-references, ul.tabular li.attribute-expert {
   height: 2.8rem;
+  min-width: 2.8rem;
   display: inline-block;
 }
 
 ul.tabular li.attribute-related_url a, ul.tabular li.attribute-references a, ul.tabular li.attribute-expert a {
   display: inline-block;
   height: 2.8rem;
+  min-width: 2.8rem;
 }
 
 .ul-links {

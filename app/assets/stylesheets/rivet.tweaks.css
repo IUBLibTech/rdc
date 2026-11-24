@@ -12,6 +12,10 @@
 #footerGitHub a {
     color: #fff;
     text-decoration: none;
+    height: 2.8rem;
+    min-width: 2.8rem;
+    display: inline-block;
+    align-content: center;
 }
 
 #footerGitHub  a:hover {
